@@ -330,7 +330,7 @@
 
         function loadGeoJSON(stationCode) {
     console.log(stationCode);
-    fetch(`http://localhost:3000/getGeoJSON/${stationCode}`)
+    fetch(`https://railwayserver.azurewebsites.net/getGeoJSON/${stationCode}`)
         .then(response => response.json())
         .then(data => {
             if (data.success && data.geojson) {
@@ -472,7 +472,7 @@ function uploadGeoJSON() {
         geojson: geojson
     };
 
-    fetch('http://localhost:3000/uploadGeoJSON', {
+    fetch('https://railwayserver.azurewebsites.net/uploadGeoJSON', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
